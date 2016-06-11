@@ -33,7 +33,7 @@ const config = {
   // Compiler Configuration
   // ----------------------------------
   compiler_css_modules     : true,
-  compiler_devtool         : 'source-map',
+  compiler_devtool         : '#inline-source-map',
   compiler_hash_type       : 'hash',
   compiler_fail_on_warning : false,
   compiler_quiet           : false,
@@ -98,7 +98,7 @@ config.compiler_vendor = config.compiler_vendor
 
     debug(
       `Package "${dep}" was not found as an npm dependency in package.json; ` +
-      `it won't be included in the webpack vendor bundle.
+        `it won't be included in the webpack vendor bundle.
        Consider removing it from vendor_dependencies in ~/config/index.js`
     )
   })
@@ -108,7 +108,7 @@ config.compiler_vendor = config.compiler_vendor
 // ------------------------------------
 const resolve = path.resolve
 const base = (...args) =>
-  Reflect.apply(resolve, null, [config.path_base, ...args])
+      Reflect.apply(resolve, null, [config.path_base, ...args])
 
 config.utils_paths = {
   base   : base,

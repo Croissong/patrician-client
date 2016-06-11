@@ -1,17 +1,18 @@
-import { combineReducers } from 'redux'
-import { routerReducer as router } from 'react-router-redux'
+import router from './routerReducer.js';
+import { combineReducers } from 'redux-immutable';
 
 export const makeRootReducer = (asyncReducers) => {
-  return combineReducers({
+  let reducers = {
     // Add sync reducers here
-    router,
-    ...asyncReducers
-  })
-}
+    router: router,
+      ...asyncReducers
+  };
+  return combineReducers(reducers);
+};
 
 export const injectReducer = (store, { key, reducer }) => {
-  store.asyncReducers[key] = reducer
-  store.replaceReducer(makeRootReducer(store.asyncReducers))
-}
+  store.asyncReducers[key] = reducer;
+  store.replaceReducer(makeRootReducer(store.asyncReducers));
+};
 
-export default makeRootReducer
+export default makeRootReducer;
