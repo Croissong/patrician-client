@@ -64,12 +64,12 @@ const Materials = (props) => {
         >
           {props.materials.map((material, index) => (
              <TableRow key={index} selected={material.selected}>
-               <TableRowColumn>{material.name}</TableRowColumn>
-               <TableRowColumn>{material.values.amount}</TableRowColumn>
-               <TableRowColumn>{material.values.buy}</TableRowColumn>
-               <TableRowColumn>{material.values.sell}</TableRowColumn>
-               <TableRowColumn>{material.values.office}</TableRowColumn>
-               <TableRowColumn>{material.values.average}</TableRowColumn>
+               <TableRowColumn>{material.get('name')}</TableRowColumn>
+               <TableRowColumn>{material.getIn(['values', 'amount'])}</TableRowColumn>
+               <TableRowColumn>{material.getIn(['values', 'buy'])}</TableRowColumn>
+               <TableRowColumn>{material.getIn(['values', 'sell'])}</TableRowColumn>
+               <TableRowColumn>{material.getIn(['values', 'office'])}</TableRowColumn>
+               <TableRowColumn>{material.getIn(['values', 'average'])}</TableRowColumn>
              </TableRow>
            ))}
         </TableBody>

@@ -1,4 +1,6 @@
 import { injectReducer } from '../../store/reducers';
+import Materials from './containers/MaterialsContainer';
+import reducer from'./modules/materials';
 
 export default (store) => ({
   path: 'materials',
@@ -8,9 +10,7 @@ export default (store) => ({
         and embed an async module loader (jsonp) when bundling   */
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
-          dependencies for bundling   */
-      const Materials = require('./containers/MaterialsContainer').default;
-      const reducer = require('./modules/materials').default;
+          dependencies for bundling   */ 
       
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'materials', reducer });

@@ -28,7 +28,7 @@ const initialState = window.__INITIAL_STATE__ ? I.fromJS(window.__INITIAL_STATE_
 const store = createStore(initialState, browserHistory);
 startSocket(store);
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: (state) => state.get('router', I.Map()).toJS() 
+  selectLocationState: (state) => state.get('router', I.Map()) 
 });
 
 // ========================================================
