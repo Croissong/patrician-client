@@ -1,8 +1,8 @@
-import Immutable from 'immutable';
+import I from 'immutable';
 import { createReducer } from 'redux-act';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
-const initialState = Immutable.fromJS({
+const initialState = I.fromJS({
   locationBeforeTransitions: null
 });
 

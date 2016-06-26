@@ -8,6 +8,7 @@ import createStore from './store/createStore';
 import AppContainer from './containers/AppContainer';
 import startSocket from './socket/socket';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { createSelectorCreator, defaultMemoize } from "reselect";
 injectTapEventPlugin();
 
 // ========================================================
@@ -27,8 +28,9 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 const initialState = window.__INITIAL_STATE__ ? I.fromJS(window.__INITIAL_STATE__) : I.Map();
 const store = createStore(initialState, browserHistory);
 startSocket(store);
+let createImmutableSelector = createSelectorCreator(defaultMemoize, I.is);
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: (state) => state.get('router', I.Map()) 
+  selectLocationState: createImmutableSelector(state => state.get('router'), router => router.toJS())
 });
 
 // ========================================================
@@ -47,14 +49,14 @@ const MOUNT_NODE = document.getElementById('root');
 
 let render = (routerKey = null) => {
   const routes = require('./routes/index').default(store);
-
+  
   ReactDOM.render(
-      <AppContainer
-    store={store}
-    history={history}
-    routes={routes}
-    routerKey={routerKey}
-      />,
+    <AppContainer
+      store={store}
+      history={history}
+      routes={routes}
+      routerKey={routerKey}
+    />,
     MOUNT_NODE
   );
 };
