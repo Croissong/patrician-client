@@ -5,7 +5,7 @@ import { socketMessage } from '../../../socket/actions.js';
 
 export const selectTown = createAction('Town selected');
 
-const initialState = I.fromJS({values: {}, selected: undefined, selected_material: {}});
+const initialState = I.fromJS({values: {}, selected_material: {}});
 
 const townReducer = createReducer({
   [socketMessage]: (state, payload) => receiveTownHandler(state, payload.get('town')),

@@ -5,7 +5,7 @@ import { socketMessage } from '../../../socket/actions.js';
 
 export const selectShip = createAction('Ship selected');
 
-const initialState = I.fromJS({ values: {}, selected: undefined });
+const initialState = I.fromJS({ values: {} });
 
 export default createReducer({
   [socketMessage]: (state, payload) => receiveShipHandler(state, payload.get('ship')),

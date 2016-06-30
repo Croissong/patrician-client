@@ -5,10 +5,7 @@ import Home from './Home';
 export const createRoutes = (store) => ({
   path: '/',
   component: CoreLayout,
-  indexRoute: Home,
-  childRoutes: [
-    PatricianRoute(store)
-  ]
+  indexRoute: PatricianRoute(store) 
 });
 
 export default createRoutes;

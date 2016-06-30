@@ -2,10 +2,8 @@ import { injectReducer } from '../../store/reducers';
 
 
 export default (store) => ({
-  /*  Async getComponent is only invoked when route matches   */
-  path: "a",
+  /*  Async getComponent is only invoked when route matches   */ 
   getComponent (nextState, cb) {
-    path: 'sax',
     require.ensure([], (require) => {
 
       const PatricianView = require('./containers/PatricianViewContainer').default

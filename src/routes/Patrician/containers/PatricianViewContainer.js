@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 function hasData(state) {
-  return state.getIn(['town', 'selected']) && state.getIn(['ship', 'selected'])
+  return state.hasIn(['town', 'selected']) && state.hasIn(['ship', 'selected'])
 }
 
 const mapActionCreators = {};

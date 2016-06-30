@@ -29,15 +29,10 @@ const initialState = window.__INITIAL_STATE__ ? I.fromJS(window.__INITIAL_STATE_
 const store = createStore(initialState, browserHistory);
 startSocket(store);
 let createImmutableSelector = createSelectorCreator(defaultMemoize, I.is);
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: createImmutableSelector(state => {
-    console.log(state);
-    return state.get('router');
-  }, router => {
-    console.log(router);
-    return router.toJS();
-  })
-});
+let locationStateSelector = createImmutableSelector(state => state.get('router'),
+                                                    router => router.toJS());
+const history = syncHistoryWithStore(browserHistory, store,
+                                     { selectLocationState: locationStateSelector });
 
 // ========================================================
 // Developer Tools Setup
