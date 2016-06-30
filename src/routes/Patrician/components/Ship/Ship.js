@@ -1,32 +1,38 @@
 import React, { PropTypes as Props } from 'react';
 import IProps from 'react-immutable-proptypes';
-import { Table, TableBody, TableFooter, TableHeader,
-         TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import I from 'immutable';
+import { FlexTable, FlexColumn } from 'react-virtualized';
 
-const Ship = (props) => (
-  <div>
-    <Table>
-      <TableHeader> 
-        <TableRow> 
-          <TableHeaderColumn>Average Price</TableHeaderColumn>
-          <TableHeaderColumn>Amount</TableHeaderColumn> 
-        </TableRow>
-      </TableHeader>
-      <TableBody 
-        showRowHover={true}
-        stripedRows={true}
-      >
-        {props.materials.entrySeq().map(([k, v]) => (
-           <TableRow key={k} > 
-             <TableRowColumn>{v.get('average_price')}</TableRowColumn>
-             <TableRowColumn>{v.get('amount')}</TableRowColumn> 
-           </TableRow>
-         ))}
-      </TableBody> 
-    </Table>
-  </div>
-);
+const Ship = ({materials}) => {
+  materials = materials.entrySeq(); 
+  return (
+    <FlexTable
+      width={300}
+      height={300}
+      headerHeight={20}
+      rowHeight={30}
+      rowCount={materials.size}
+      rowGetter={({index}) => materials.get(index)}
+    >
+      <FlexColumn
+        label='Average Price'
+        dataKey='average_price'
+        cellDataGetter={cellDataGetter}
+        width={100}
+      />
+      <FlexColumn
+        width={200}
+        label='Amount'
+        cellDataGetter={cellDataGetter}
+        dataKey='amount'
+      /> 
+    </FlexTable> 
+  )
+};
+
+function cellDataGetter({ dataKey, rowData }) {
+  return rowData[1].get(dataKey);
+}
 
 Ship.propTypes = {
   materials: IProps.map
