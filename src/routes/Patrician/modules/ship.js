@@ -1,0 +1,24 @@
+import I from 'immutable';
+import { createStore } from 'redux';
+import { createAction, createReducer } from 'redux-act';
+import { socketMessage } from '../../../socket/actions.js';
+
+export const selectShip = createAction('Ship selected');
+
+const initialState = I.fromJS({ values: {}, selected: undefined });
+
+export default createReducer({
+  [socketMessage]: (state, payload) => receiveShipHandler(state, payload.get('ship')),
+  [selectShip]: (state, payload) => selectShipHandler(state, payload)
+}, initialState);
+
+
+
+const receiveShipHandler = (state, ship) => {
+  let name = ship.get('name');
+  return state.setIn(['values', name], ship)
+              .update('selected', sel => sel || name); 
+}
+
+
+const selectShipHandler = (state, payload) => state.set('selected', payload);

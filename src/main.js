@@ -30,7 +30,13 @@ const store = createStore(initialState, browserHistory);
 startSocket(store);
 let createImmutableSelector = createSelectorCreator(defaultMemoize, I.is);
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: createImmutableSelector(state => state.get('router'), router => router.toJS())
+  selectLocationState: createImmutableSelector(state => {
+    console.log(state);
+    return state.get('router');
+  }, router => {
+    console.log(router);
+    return router.toJS();
+  })
 });
 
 // ========================================================
