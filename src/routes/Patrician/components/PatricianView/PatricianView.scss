@@ -1,0 +1,46 @@
+@lost flexbox flex;
+
+.container {
+    height: 80%;
+    lost-center: 80%;
+    background-color: blue;
+}
+
+.town {
+    height: 80%;
+    lost-column: 3/8;
+    background-color: brown;
+}
+
+.ship {
+    height: 80%;
+    lost-column: 2/8; 
+}
+
+.header {
+    lost-row: 1/8;
+    background-color: pink;
+}
+
+.table {
+    lost-row: 7/8; 
+}
+
+.ship.table {
+    background-color: orange;
+}
+
+.town.table {
+    background-color: green;
+}
+
+.settings {
+    lost-center: 90%;
+    lost-row: 1/8;
+    background-color: yellow;
+}
+
+.content {
+    width: 100%;
+    lost-row:7/8;
+}
