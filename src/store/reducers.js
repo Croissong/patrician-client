@@ -5,7 +5,7 @@ export const makeRootReducer = (asyncReducers) => {
   let reducers = {
     // Add sync reducers here
     router: router,
-      ...asyncReducers
+    ...asyncReducers
   };
   return combineReducers(reducers);
 };

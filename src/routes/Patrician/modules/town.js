@@ -1,5 +1,4 @@
 import I from 'immutable';
-import { createStore } from 'redux';
 import { createAction, createReducer } from 'redux-act';
 import { socketMessage } from '../../../socket/actions.js';
 
@@ -17,8 +16,7 @@ export default townReducer;
 const receiveTownHandler = (state, town) => {
   let name = town.get('name');
   return state.setIn(['values', name], town)
-              .update('selected', selected => selected || name); 
-}
-
+              .update('selected', selected => selected || name);
+};
 
 const selectTownHandler = (state, payload) => state.set('selected', payload);

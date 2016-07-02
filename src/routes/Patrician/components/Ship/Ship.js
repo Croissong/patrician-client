@@ -1,18 +1,16 @@
 import React, { PropTypes as Props } from 'react';
-import IProps from 'react-immutable-proptypes';
-import I from 'immutable';
 import { FlexTable, FlexColumn } from 'react-virtualized';
+import { MATERIALS } from 'constants/constants';
 
-const Ship = ({materials}) => {
-  materials = materials.entrySeq(); 
+const Ship = ({rowGetter}) => {
   return (
     <FlexTable
       width={300}
       height={300}
       headerHeight={20}
       rowHeight={30}
-      rowCount={materials.size}
-      rowGetter={({index}) => materials.get(index)}
+      rowCount={MATERIALS.length}
+      rowGetter={rowGetter}
     >
       <FlexColumn
         label='Average Price'
@@ -25,17 +23,17 @@ const Ship = ({materials}) => {
         label='Amount'
         cellDataGetter={cellDataGetter}
         dataKey='amount'
-      /> 
-    </FlexTable> 
-  )
+      />
+    </FlexTable>
+  );
 };
 
-function cellDataGetter({ dataKey, rowData }) {
+function cellDataGetter ({ dataKey, rowData }) {
   return rowData[1].get(dataKey);
 }
 
 Ship.propTypes = {
-  materials: IProps.map
+  rowGetter: Props.func
 };
 
 export default Ship;

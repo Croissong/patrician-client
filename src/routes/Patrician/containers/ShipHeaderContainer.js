@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { selectTown } from '../modules/town';
+import { selectShip } from '../modules/ship.js';
 import ShipHeader from '../components/ShipHeader';
 
 const valuesSelector = (ship) => ship.get('values');
-const nameSelector = (ship) => ship.get('name');
+const nameSelector = (ship) => ship.get('selected');
 
 const shipsSelector = createSelector(
   valuesSelector,
@@ -17,13 +17,14 @@ const shipSelector = createSelector(
 );
 
 const mapStateToProps = (state) => {
-  let ship = state.get('ship'); 
+  let ship = state.get('ship');
   let selectedShip = shipSelector(ship);
-  return { name: nameSelector(ship), ships: shipsSelector(ship) };
-}
+  return { name: nameSelector(ship), ships: shipsSelector(ship),
+           amount: selectedShip.get('amount'), average_price: selectedShip.get('average_price')};
+};
 
 const mapActionCreators = {
-  selectShip: ({ value }) => selectShip(value),
+  selectShip: ({ value }) => selectShip(value)
 };
 
 export default connect(mapStateToProps, mapActionCreators)(ShipHeader);

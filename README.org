@@ -1,0 +1,5 @@
+* Patrician SPA
+
+[[https://travis-ci.org/croissong/patrician-client][https://travis-ci.org/croissong/patrician-client.svg]]
+[[https://david-dm.org/croissong/patrician-client][https://david-dm.org/croissong/patrician-client.svg]]
+[[https://david-dm.org/croissong/patrician-client#info=devDependencies][https://david-dm.org/croissong/patrician-client/dev-status.svg]]

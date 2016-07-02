@@ -5,14 +5,14 @@ import Select from 'react-select';
 const TownHeader = (props) => (
   <div>
     <Select
-      name="town"
+      name='town'
       value={props.name}
       options={props.towns}
       onChange={props.selectCity}
-    /> 
+    />
     <div>{props.name}</div>
     <div>{props.amount}</div>
-    <div>{props.unknown}</div> 
+    <div>{props.unknown}</div>
   </div>
 );
 

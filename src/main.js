@@ -8,7 +8,7 @@ import createStore from './store/createStore';
 import AppContainer from './containers/AppContainer';
 import startSocket from './socket/socket';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { createSelectorCreator, defaultMemoize } from "reselect";
+import { createSelectorCreator, defaultMemoize } from 'reselect';
 injectTapEventPlugin();
 
 // ========================================================
@@ -50,7 +50,7 @@ const MOUNT_NODE = document.getElementById('root');
 
 let render = (routerKey = null) => {
   const routes = require('./routes/index').default(store);
-  
+
   ReactDOM.render(
     <AppContainer
       store={store}
@@ -67,7 +67,7 @@ let render = (routerKey = null) => {
 if (__DEV__ && module.hot) {
   const renderApp = render;
   const renderError = (error) => {
-    const RedBox = require('redbox-react').default
+    const RedBox = require('redbox-react').default;
     ReactDOM.render(<RedBox error={error} />, MOUNT_NODE);
   };
   render = () => {

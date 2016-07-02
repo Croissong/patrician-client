@@ -9,12 +9,12 @@ const PatricianView = (props) => {
   if (props.hasData) {
     return (
       <div>
-        <TownHeader/>
-        <ShipHeader/>
-        <Town/>
-        <Ship/>
-      </div> 
-    )
+        <TownHeader />
+        <ShipHeader />
+        <Town />
+        <Ship />
+      </div>
+    );
   } else {
     return (
       <div className={classes.container}>
@@ -24,7 +24,7 @@ const PatricianView = (props) => {
           <div className={classes.town}>
             <div className={classes.header}>
             </div>
-            <div className={classes.table}> 
+            <div className={classes.table}>
             </div>
           </div>
           <div className={classes.ship}>
@@ -41,7 +41,7 @@ const PatricianView = (props) => {
           </div>
         </div>
       </div>
-    )
+    );
   }
 };
 
