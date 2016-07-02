@@ -9,6 +9,8 @@ import AppContainer from './containers/AppContainer';
 import startSocket from './socket/socket';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { createSelectorCreator, defaultMemoize } from 'reselect';
+import { initialState } from './constants/constants';
+
 injectTapEventPlugin();
 
 // ========================================================
@@ -25,7 +27,7 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 // react-router-redux reducer under the routerKey "router" in src/routes/index.js,
 // so we need to provide a custom `selectLocationState` to inform
 // react-router-redux of its location.
-const initialState = window.__INITIAL_STATE__ ? I.fromJS(window.__INITIAL_STATE__) : I.Map();
+/* const initialState = window.__INITIAL_STATE__ ? I.fromJS(window.__INITIAL_STATE__) : I.Map();*/
 const store = createStore(initialState, browserHistory);
 startSocket(store);
 let createImmutableSelector = createSelectorCreator(defaultMemoize, I.is);

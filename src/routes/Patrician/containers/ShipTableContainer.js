@@ -1,14 +1,15 @@
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import Ship from '../components/Ship';
+import ShipTable from '../components/Ship/ShipTable';
+import { MATERIALS } from 'constants/constants';
 
 const valuesSelector = (ship) => ship.get('values');
 const nameSelector = (ship) => ship.get('selected');
 const rowGetterSelector = createSelector(
   valuesSelector, nameSelector,
   (values, name) => {
-    let materials = values.getIn([name, 'materials']).entrySeq();
-    return ({index}) => materials.get(index);
+    let materials = values.getIn([name, 'materials']);
+    return ({index}) => materials.get(MATERIALS.get(index));
   }
 );
 
@@ -18,4 +19,4 @@ const mapStateToProps = (state) => ({
 
 const mapActionCreators = {};
 
-export default connect(mapStateToProps, mapActionCreators)(Ship);
+export default connect(mapStateToProps, mapActionCreators)(ShipTable);

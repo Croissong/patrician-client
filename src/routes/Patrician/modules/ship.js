@@ -13,8 +13,7 @@ export default createReducer({
 
 const receiveShipHandler = (state, ship) => {
   let name = ship.get('name');
-  return state.setIn(['values', name], ship)
-              .update('selected', sel => sel || name);
+  return state.setIn(['values', name], ship);
 };
 
 const selectShipHandler = (state, payload) => state.set('selected', payload);

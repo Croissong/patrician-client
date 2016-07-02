@@ -4,7 +4,7 @@ import { combineReducers } from 'redux-immutable';
 export const makeRootReducer = (asyncReducers) => {
   let reducers = {
     // Add sync reducers here
-    router: router,
+    router,
     ...asyncReducers
   };
   return combineReducers(reducers);

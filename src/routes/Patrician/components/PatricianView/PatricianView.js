@@ -1,42 +1,55 @@
 import React, { PropTypes as Props } from 'react';
-import Town from '../../containers/TownContainer';
-import TownHeader from '../../containers/TownHeaderContainer';
-import ShipHeader from '../../containers/ShipHeaderContainer';
-import Ship from '../../containers/ShipContainer';
+import Town from '../Town';
+import Ship from '../Ship';
 import classes from './PatricianView.scss';
 
 const PatricianView = (props) => {
-  if (props.hasData) {
+  if (true) {
     return (
-      <div>
-        <TownHeader />
-        <ShipHeader />
-        <Town />
-        <Ship />
+      <div className={classes.outer}>
+        <div className={classes.inner}>
+          <div className={classes.settings}>
+            Settings
+          </div>
+          <div className={classes.content}>
+            <Town index={0} className={classes.leftTown} />
+            <Ship className={classes.ship} />
+            <Town index={1} className={classes.rightTown} />
+          </div>
+        </div>
       </div>
     );
   } else {
     return (
-      <div className={classes.container}>
-        <div className={classes.settings}>
-        </div>
-        <div className={classes.content}>
-          <div className={classes.town}>
-            <div className={classes.header}>
-            </div>
-            <div className={classes.table}>
-            </div>
+      <div className={classes.outer}>
+        <div className={classes.inner}>
+          <div className={classes.settings}>
+            Settings
           </div>
-          <div className={classes.ship}>
-            <div className={classes.header}>
+          <div className={classes.content}>
+            <div className={classes.leftTown}>
+              <div className={classes.header}>
+                TownHeader
+              </div>
+              <div className={classes.townTable}>
+                TownTable
+              </div>
             </div>
-            <div className={classes.table}>
+            <div className={classes.ship}>
+              <div className={classes.header}>
+                ShipHeader
+              </div>
+              <div className={classes.shipTable}>
+                ShipTable
+              </div>
             </div>
-          </div>
-          <div className={classes.town}>
-            <div className={classes.header}>
-            </div>
-            <div className={classes.table}>
+            <div className={classes.rightTown}>
+              <div className={classes.header}>
+                TownHeader
+              </div>
+              <div className={classes.townTable}>
+                TownTable
+              </div>
             </div>
           </div>
         </div>

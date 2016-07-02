@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { selectTown } from '../modules/town';
-import TownHeader from '../components/TownHeader';
+import TownHeader from '../components/Town/TownHeader';
 
-const valuesSelector = (town) => town.get('values');
-const nameSelector = (town) => town.get('selected');
+const valuesSelector = (town) => {
+  return town.get('values');
+};
+const nameSelector = (town, i) => {
+  return town.get('selected').get(i);
+};
 
 const townsSelector = createSelector(
   valuesSelector,
@@ -16,15 +20,17 @@ const townSelector = createSelector(
   (values, name) => values.get(name)
 );
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, {index}) => {
   let town = state.get('town');
-  let selectedTown = townSelector(town);
-  return { towns: townsSelector(town), name: nameSelector(town),
-           amount: selectedTown.get('amount'), unknown: selectedTown.get('unknown') };
+  let selectedTown = townSelector(town, index);
+  return { towns: townsSelector(town), name: nameSelector(town, index),
+           total_weight: selectedTown.get('total_weight'), unknown: selectedTown.get('unknown') };
 };
 
-const mapActionCreators = {
-  selectTown: ({ value }) => selectTown(value)
+const mapActionCreators = (dispatch, {index}) => {
+  return { selectTown: ({value}) => {
+    dispatch(selectTown(index, value));
+  } };
 };
 
 export default connect(mapStateToProps, mapActionCreators)(TownHeader);

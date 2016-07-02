@@ -1,26 +1,19 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { selectShip } from '../modules/ship.js';
-import ShipHeader from '../components/ShipHeader';
+import ShipHeader from '../components/Ship/ShipHeader';
 
 const valuesSelector = (ship) => ship.get('values');
 const nameSelector = (ship) => ship.get('selected');
 
 const shipsSelector = createSelector(
   valuesSelector,
-  (keys) => keys.keySeq().map(k => k).toJS()
-);
-
-const shipSelector = createSelector(
-  valuesSelector, nameSelector,
-  (values, name) => values.get(name)
+  (keys) => keys.keySeq().map(k => ({ value: k, label: k })).toJS()
 );
 
 const mapStateToProps = (state) => {
   let ship = state.get('ship');
-  let selectedShip = shipSelector(ship);
-  return { name: nameSelector(ship), ships: shipsSelector(ship),
-           amount: selectedShip.get('amount'), average_price: selectedShip.get('average_price')};
+  return { name: nameSelector(ship), ships: shipsSelector(ship) };
 };
 
 const mapActionCreators = {
