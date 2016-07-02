@@ -1,6 +1,6 @@
 import I from 'immutable';
-import { Socket } from 'phoenix-elixir';
-import { socketClosed, socketOpened, socketMessage } from './actions.js';
+import { Socket } from 'phoenix-socket';
+import { socketClosed, socketOpened, socketMessage } from './actions';
 
 export default function (store) {
   let socket = new Socket('ws://localhost:4000/socket', {
