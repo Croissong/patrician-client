@@ -7,7 +7,7 @@ const Ship = ({className}) => {
   return (
     <div className={className}>
       <ShipHeader className={classes.header} />
-      <ShipTable className={classes.shipTable} />
+      <ShipTable />
     </div>
   );
 };

@@ -34,7 +34,12 @@
     lost-row: 1/8; 
 }
 
+.tableFocused:focus {
+    outline:none;
+}
+
 .table {
+    composes: tableFocused; 
     lost-row: 7/8; 
 }
 

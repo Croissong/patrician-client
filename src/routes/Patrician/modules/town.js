@@ -6,14 +6,12 @@ export const selectTown = createAction('Town selected', (i, val) => ({i, val}));
 
 const initialState = I.fromJS({values: {}, selected: []});
 
-const townReducer = createReducer({
+export default createReducer({
   [socketMessage]: (state, payload) => receiveTownHandler(state, payload.get('town')),
   [selectTown]: (state, payload) => {
     return selectTownHandler(state, payload);
   }
 }, initialState);
-
-export default townReducer;
 
 const receiveTownHandler = (state, town) => {
   let name = town.get('name');

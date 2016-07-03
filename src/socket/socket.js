@@ -1,14 +1,16 @@
 import I from 'immutable';
 import { Socket } from 'phoenix-socket';
-import { socketClosed, socketOpened, socketMessage } from './actions';
+import { injectReducer } from '../store/reducers';
+import socketReducer, { socketClosed, socketOpened, socketMessage } from './actions';
 
 export default function (store) {
+  injectReducer(store, { key: 'socket', reducer: socketReducer });
   let socket = new Socket('ws://localhost:4000/socket', {
     logger: (kind, msg, data) => { }
   });
 
   socket.connect();
-
+  
   socket.onOpen(ev => store.dispatch(socketOpened(ev)));
   socket.onClose(ev => store.dispatch(socketClosed(ev)));
 

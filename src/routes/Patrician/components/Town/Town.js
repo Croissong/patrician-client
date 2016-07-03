@@ -7,7 +7,7 @@ const Town = ({className, index}) => {
   return (
     <div className={className}>
       <TownHeader index={index} className={classes.header} />
-      <TownTable index={index} className={classes.townTable} />
+      <TownTable index={index} />
     </div>
   );
 };
