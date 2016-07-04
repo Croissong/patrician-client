@@ -1,7 +1,7 @@
 import React, { PropTypes as Props } from 'react';
 import ShipHeader from '../../containers/ShipHeaderContainer.js';
 import ShipTable from '../../containers/ShipTableContainer.js';
-import classes from '../PatricianView/PatricianView.scss';
+import classes from './Ship.scss';
 
 const Ship = ({className}) => {
   return (

@@ -1,5 +1,18 @@
 .frame {
-    lost-align: bottom-right; 
-    height:100%;
+    height: 100%;
+    width: 100%;
     background-color: grey;
+}
+
+.content {
+    lost-align: bottom-right; 
+    lost-row: 47/50;
+    lost-column: 49/50;
+    lost-offset: -1/50 row;
+}
+
+.statusBar {
+    lost-row: 3/50 0;
+    lost-center: 98%;
+    lost-align: middle-right;
 }

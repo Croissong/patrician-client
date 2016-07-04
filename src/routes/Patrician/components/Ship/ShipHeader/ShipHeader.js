@@ -1,22 +1,37 @@
 import React, { PropTypes as Props } from 'react';
-import Select from 'react-select';
+import IProps from 'react-immutable-proptypes';
+import { Menu, MainButton, ChildButton } from 'react-mfb';
+import classes from '../Ship.scss';
 
-const ShipHeader = (props) => {
+const ShipHeader = ({name, ships, selectShip, className}) => {
   return (
-    <div>
-      <Select
-        name='ship'
-        value={props.name}
-        options={props.ships}
-        onChange={props.selectShip}
-      />
+    <div className={className}>
+      <div className={classes.btn}>
+        <Menu effect={'slidein'} method={'click'} position={'bl'}>
+          <MainButton iconResting="icon-boat fab-icon" iconActive="icon-boat fab-icon" />
+          {ships.filter(s => s != name).map(s => (
+             <ChildButton
+               key={s}
+               onClick={selectShip} 
+               icon="icon-boat fab-icon"
+               label={s}/>
+           ))}
+        </Menu>
+      </div>
+      <div className={classes.name}>{name}</div>
+      {/* <Select
+      name='ship'
+      value={props.name}
+      options={props.ships}
+      onChange={props.selectShip}
+      /> */}
     </div>
   );
 };
 
 ShipHeader.propTypes = {
   name: Props.string,
-  ships: Props.array,
+  ships: IProps.seq,
   selectShip: Props.func
 };
 

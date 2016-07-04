@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="moi" horiz-adv-x="1000" >
+<font-face font-family="moi" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="boat" unicode="&#xe800;" d="M677 131l11 0c69 0 125 56 125 125l-3 0-310 0 0 0 0 469-31 0 0-469-310 0-3 0c0-27 9-52 24-73 10 5 20 9 29 13-7 9-12 18-16 29l0 0 137 0c17 1 35 1 53 0l393 0c-13-36-48-62-88-62l-123 0c38-18 76-29 112-32l0 0 0 0z m136 157l-282 0 0 281 282-281 0 0z m-79 31l-171 0 0 172 171-172 0 0z m-484 234c-94-156-94-265-94-265l282 0c0 0-32 46-32 187 0 141 32 250 32 250 0 0-94-16-188-172l0 0z m12-41c-71-136-71-193-71-193l203 0c0 0-19 56-19 156 0 100 19 195 19 195 0 0-70-41-132-158l0 0z m-168-412c13 10 28 20 44 29 126 75 263 93 400 16 126-71 244-55 348 14 19 13 37 27 52 41l0-42c-11-8-23-17-35-25-113-75-243-92-380-15-126 70-252 54-369-16-23-13-43-27-60-41 0 0 0 0 0-1l0 40 0 0 0 0z m93-38c112 52 232 56 351-11 109-61 212-58 305-11l0-34c-98-45-207-46-320 18-114 64-228 57-336 3l0 35 0 0 0 0z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

@@ -8,7 +8,7 @@ const nameSelector = (ship) => ship.get('selected');
 
 const shipsSelector = createSelector(
   valuesSelector,
-  (keys) => keys.keySeq().map(k => ({ value: k, label: k })).toJS()
+  (keys) => keys.keySeq()
 );
 
 const mapStateToProps = (state) => {
@@ -17,7 +17,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapActionCreators = {
-  selectShip: ({ value }) => selectShip(value)
+  selectShip: (evt) => {
+    return selectShip(evt.target.parentNode.attributes[0].value);
+  }
 };
 
 export default connect(mapStateToProps, mapActionCreators)(ShipHeader);

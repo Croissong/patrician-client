@@ -12,3 +12,11 @@ For example:
 */
 @import '../../node_modules/react-select/dist/react-select';
 @import '../../node_modules/react-virtualized/styles';
+@import './mfb';
+
+@import './iconFont/css/moi';
+
+.fab-icon {
+    font-size: 40px;
+}
+

@@ -1,0 +1,15 @@
+.header {
+    composes: header from '../PatricianView/PatricianView.scss';
+    lost-align: middle-left;
+}
+
+.btn {
+    lost-column: 2/7 0;
+    height: 100%; 
+}
+
+.name {
+    lost-column: 3/7;
+    lost-offset: -1/6 row;
+    height: 100%;
+}

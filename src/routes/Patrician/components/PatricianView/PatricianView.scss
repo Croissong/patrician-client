@@ -2,11 +2,10 @@
 
 .outer {
     background-color: white;
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
-    border-radius: 25px;
-    lost-center: 98%; 
-    lost-row: 47/50;
+    border-top-left-radius: 25px;
+    border: 1px solid grey; 
+    width: 100%;
+    height: 100%;
 }
 
 .inner {
@@ -31,7 +30,7 @@
 }
 
 .header {
-    lost-row: 1/8; 
+    height: 70px;
 }
 
 .tableFocused:focus {
