@@ -1,6 +1,7 @@
 import React, { PropTypes as Props } from 'react';
 import Town from '../Town';
 import Ship from '../Ship';
+import Settings from '../../containers/SettingsContainer';
 import classes from './PatricianView.scss';
 
 const PatricianView = (props) => {
@@ -8,9 +9,7 @@ const PatricianView = (props) => {
     return (
       <div className={classes.outer}>
         <div className={classes.inner}>
-          <div className={classes.settings}>
-            Settings
-          </div>
+          <Settings className={classes.settings} />
           <div className={classes.content}>
             <Town index={0} className={classes.leftTown} />
             <Ship className={classes.ship} />

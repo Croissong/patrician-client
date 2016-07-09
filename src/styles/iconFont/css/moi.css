@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'moi';
-  src: url('./iconFont/font/moi.eot?4648909');
-  src: url('./iconFont/font/moi.eot?4648909#iefix') format('embedded-opentype'),
-  url('./iconFont/font/moi.woff2?4648909') format('woff2'),
-  url('./iconFont/font/moi.woff?4648909') format('woff'),
-  url('./iconFont/font/moi.ttf?4648909') format('truetype'),
-  url('./iconFont/font/moi.svg?4648909#moi') format('svg');
+  src: url('iconFont/font/moi.eot?97945761');
+  src: url('iconFont/font/moi.eot?97945761#iefix') format('embedded-opentype'),
+       url('iconFont/font/moi.woff2?97945761') format('woff2'),
+       url('iconFont/font/moi.woff?97945761') format('woff'),
+       url('iconFont/font/moi.ttf?97945761') format('truetype'),
+       url('iconFont/font/moi.svg?97945761#moi') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'moi';
-    src: url('iconFont/font/moi.svg?4648909#moi') format('svg');
+    src: url('../font/moi.svg?97945761#moi') format('svg');
   }
 }
 */
@@ -56,3 +56,4 @@
 }
  
 .icon-boat:before { content: '\e800'; } /* '' */
+.icon-world-map:before { content: '\e801'; } /* '' */

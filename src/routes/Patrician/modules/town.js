@@ -3,11 +3,13 @@ import { createAction, createReducer } from 'redux-act';
 import { socketMessage } from '../../../socket/actions.js';
 
 export const selectTown = createAction('Town selected', (i, val) => ({i, val}));
+export const toggleCompare = createAction('Compare toggled');
 
-const initialState = I.fromJS({values: {}, selected: []});
+const initialState = I.fromJS({ values: {}, selected: [], compare: false });
 
 export default createReducer({
   [socketMessage]: (state, payload) => receiveTownHandler(state, payload.get('town')),
+  [toggleCompare]: (state, payload) => toggleCompareHandler(state, payload),
   [selectTown]: (state, payload) => {
     return selectTownHandler(state, payload);
   }
@@ -21,4 +23,9 @@ const receiveTownHandler = (state, town) => {
 const selectTownHandler = (state, {i, val}) => {
   return state.update('selected',
                       (selected) => selected.set(i, val));
+};
+
+
+const toggleCompareHandler = (state, val) => {
+  return state.set('compare', val);
 };

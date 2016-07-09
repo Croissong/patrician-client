@@ -225,6 +225,7 @@ export const initialState = I.fromJS(
            }
          },
            selected_material: {},
+           compare: false,
            selected: ['Luebeck', 'Rostock']
          },
     ship: {
