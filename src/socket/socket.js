@@ -10,7 +10,7 @@ export default function (store) {
   });
 
   socket.connect();
-  
+
   socket.onOpen(ev => store.dispatch(socketOpened(ev)));
   socket.onClose(ev => store.dispatch(socketClosed(ev)));
 

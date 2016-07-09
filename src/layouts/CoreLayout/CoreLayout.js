@@ -9,18 +9,18 @@ export const CoreLayout = ({ children }, {router}) => {
   return (
     <div className={classes.frame}>
       <StatusBar className={classes.statusBar} />
-      <div className={classes.content}> 
+      <div className={classes.content}>
         {children}
-      </div> 
+      </div>
       <Menu effect={'slidein'} method={'click'} position={'br'}>
-        <MainButton iconResting="icon-world-map fab-icon" iconActive="icon-boat fab-icon" /> 
+        <MainButton iconResting='icon-world-map fab-icon' iconActive='icon-boat fab-icon' />
         <ChildButton
           onClick={gotoMap}
           className={classes.btn}
-          icon="icon-world-map fab-icon"
-          label="Map" /> 
+          icon='icon-world-map fab-icon'
+          label='Map' />
       </Menu>
-    </div> 
+    </div>
   );
 };
 
@@ -31,6 +31,5 @@ CoreLayout.propTypes = {
 CoreLayout.contextTypes = {
   router: React.PropTypes.object
 };
-
 
 export default CoreLayout;

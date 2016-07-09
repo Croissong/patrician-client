@@ -25,7 +25,6 @@ const selectTownHandler = (state, {i, val}) => {
                       (selected) => selected.set(i, val));
 };
 
-
 const toggleCompareHandler = (state, val) => {
   return state.set('compare', val);
 };

@@ -21,6 +21,7 @@
     "semi": ["error", "always"],
     "max-len": [2, 120, 2],
     "generator-star-spacing": 0,
-    "babel/generator-star-spacing": 1
+    "babel/generator-star-spacing": 1,
+    "react/jsx-indent": [0]
   }
 }

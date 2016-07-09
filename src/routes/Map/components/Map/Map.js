@@ -1,4 +1,4 @@
-import React, { PropTypes as Props } from 'react';
+import React from 'react';
 import classes from './Map.scss';
 
 const Map = (props) => {

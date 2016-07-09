@@ -1,16 +1,16 @@
 import React, { PropTypes as Props } from 'react';
-import classes from './Settings.scss';
+/* import classes from './Settings.scss';*/
 import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 import Toggle from 'material-ui/Toggle';
 
 const Settings = ({className, toggleCompare, compare}) => {
   return (
     <Toolbar className={className}>
-      <ToolbarGroup firstChild={true}>
+      <ToolbarGroup firstChild>
         <Toggle
           defaultToggled={compare}
           onToggle={toggleCompare}
-          label="Comparison" 
+          label='Comparison'
         />
       </ToolbarGroup>
     </Toolbar>
@@ -19,7 +19,8 @@ const Settings = ({className, toggleCompare, compare}) => {
 
 Settings.propTypes = {
   compare: Props.bool,
-  toggleCompare: Props.func
+  toggleCompare: Props.func,
+  className: Props.string
 };
 
 export default Settings;

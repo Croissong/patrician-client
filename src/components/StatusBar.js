@@ -5,13 +5,13 @@ import 'rc-tooltip/assets/bootstrap.css';
 
 const StatusBar = ({ connected, className }) => {
   return (
-    <div className={className}> 
+    <div className={className}>
       {connected ? (
-         <Tooltip placement="bottomRight" overlay={<span>Websocket connected</span>}>
+         <Tooltip placement='bottomRight' overlay={<span>Websocket connected</span>}>
            <div className={classes.ledGreen} />
          </Tooltip>
        ) : (
-         <Tooltip placement="bottomRight" overlay={<span>Websocket disconnected</span>}>
+         <Tooltip placement='bottomRight' overlay={<span>Websocket disconnected</span>}>
            <div className={classes.ledRed} />
          </Tooltip>
        )}
@@ -20,6 +20,7 @@ const StatusBar = ({ connected, className }) => {
 };
 
 StatusBar.propTypes = {
+  className: Props.string,
   connected: Props.bool
 };
 
