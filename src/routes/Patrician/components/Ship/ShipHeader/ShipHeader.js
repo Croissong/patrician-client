@@ -1,6 +1,6 @@
 import React, { PropTypes as Props } from 'react';
 import IProps from 'react-immutable-proptypes';
-import { Menu, MainButton, ChildButton } from 'react-mfb';
+import { Menu, MainButton, ChildButton } from 'constants/../../modules/react-mfb';
 import classes from '../Ship.scss';
 
 const ShipHeader = ({name, ships, selectShip, className}) => {
@@ -11,20 +11,14 @@ const ShipHeader = ({name, ships, selectShip, className}) => {
           <MainButton iconResting='icon-boat fab-icon' iconActive='icon-boat fab-icon' />
           {ships.filter(s => s !== name).map(s =>
             (<ChildButton
-              key={s}
-              onClick={selectShip}
-              icon='icon-boat fab-icon'
-              label={s} />
+               key={s}
+               onClick={selectShip}
+               icon='icon-boat fab-icon'
+               label={s} />
             ))}
         </Menu>
       </div>
-      <div className={classes.name}>{name}</div>
-      {/* <Select
-      name='ship'
-      value={props.name}
-      options={props.ships}
-      onChange={props.selectShip}
-      /> */}
+      <div className={classes.name}>{name}</div> 
     </div>
   );
 };

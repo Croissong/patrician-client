@@ -2,17 +2,17 @@ import React, { PropTypes as Props } from 'react';
 import IProps from 'react-immutable-proptypes';
 import Select from 'react-select';
 
-const TownHeader = (props) => {
+const TownHeader = ({ name, towns, selectTown, total_weight, unknown }) => {
   return (
     <div>
       <Select
         name='town'
-        value={props.name}
-        options={props.towns}
-        onChange={props.selectTown}
+        value={name}
+        options={towns}
+        onChange={selectTown}
       />
-      <div>total_weight: {props.total_weight}</div>
-      <div>unknown: {props.unknown}</div>
+      <div>total_weight: {total_weight}</div>
+      <div>unknown: {unknown}</div>
     </div>
   );
 };

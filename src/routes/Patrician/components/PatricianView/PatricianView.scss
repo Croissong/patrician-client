@@ -10,23 +10,7 @@
 
 .inner {
     lost-row: 11/12; 
-    lost-center: 80%; 
-}
-
-.town {
-    lost-column: 3/8; 
-}
-
-.leftTown {
-    composes: town; 
-}
-
-.rightTown {
-    composes: town; 
-}
-
-.ship {
-    lost-column: 2/8; 
+    lost-center: 90%; 
 }
 
 .header {
@@ -39,15 +23,6 @@
 
 .table {
     composes: tableFocused; 
-    lost-row: 7/8; 
-}
-
-.shipTable {
-    composes: table; 
-}
-
-.townTable {
-    composes: table; 
 }
 
 .settings {

@@ -1,13 +1,13 @@
 import React, { PropTypes as Props } from 'react';
-import ShipHeader from '../../containers/ShipHeaderContainer.js';
-import ShipTable from '../../containers/ShipTableContainer.js';
+import ShipHeader from '../../containers/Ship/ShipHeaderContainer.js';
+import ShipTable from '../../containers/Ship/ShipTableContainer.js';
 import classes from './Ship.scss';
 
-const Ship = ({className}) => {
+const Ship = ({className, ship}) => {
   return (
     <div className={className}>
-      <ShipHeader className={classes.header} />
-      <ShipTable />
+      <ShipHeader ship={ship} className={classes.header} />
+      <ShipTable ship={ship}/>
     </div>
   );
 };

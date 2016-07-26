@@ -17,12 +17,13 @@ export default createReducer({
 
 const receiveTownHandler = (state, town) => {
   let name = town.get('name');
-  return state.setIn(['values', name], town);
+  return state.updateIn(['values', name],  I.Map(),
+                        (oldTown) => oldTown.mergeDeep(town))
+              .setIn(['selected', 0], name);
 };
 
 const selectTownHandler = (state, {i, val}) => {
-  return state.update('selected',
-                      (selected) => selected.set(i, val));
+  return state.setIn(['selected', i], val); 
 };
 
 const toggleCompareHandler = (state, val) => {

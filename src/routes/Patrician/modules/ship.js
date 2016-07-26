@@ -13,7 +13,8 @@ export default createReducer({
 
 const receiveShipHandler = (state, ship) => {
   let name = ship.get('name');
-  return state.setIn(['values', name], ship);
+  name = 'Euphradite';
+  return state.updateIn(['values', name], (oldShip) => oldShip.mergeDeep(ship));
 };
 
 const selectShipHandler = (state, payload) => state.set('selected', payload);

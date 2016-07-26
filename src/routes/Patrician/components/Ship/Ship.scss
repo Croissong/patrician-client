@@ -13,3 +13,11 @@
     lost-offset: -1/6 row;
     height: 100%;
 }
+
+.table {
+    composes: table from '../PatricianView/PatricianView.scss';; 
+}
+
+.ship {
+    lost-column: 2/8; 
+}

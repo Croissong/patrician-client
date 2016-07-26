@@ -1,39 +1,40 @@
 import React, { PropTypes as Props } from 'react';
 import { FlexTable, FlexColumn } from 'react-virtualized';
 import { MATERIALS } from 'constants/constants';
-import classes from '../../PatricianView/PatricianView.scss';
+import classes from '../Town.scss';
 
-const TownTable = ({rowGetter}) => {
+const TownTable = ({className, rowGetter, width}) => {
   return (
     <FlexTable
-      width={500}
+      width={width}
       height={700}
       headerHeight={20}
       rowHeight={30}
       rowCount={MATERIALS.size}
       rowGetter={rowGetter}
-      gridClassName={classes.townTable}
+      className={classes.table}
+      gridClassName={classes.innerTable}
     >
       <FlexColumn
         label='Material'
         dataKey='name'
         cellDataGetter={keyDataGetter}
-        width={200}
+        width={0.4 * width}
       />
       <FlexColumn
-        width={100}
+        width={0.2 * width}
         label='Amount'
         cellDataGetter={cellDataGetter}
         dataKey='amount'
       />
       <FlexColumn
-        width={50}
+        width={0.2 * width}
         label='Buy'
         cellDataGetter={cellDataGetter}
         dataKey='buy'
       />
       <FlexColumn
-        width={50}
+        width={0.2 * width}
         label='Sell'
         cellDataGetter={cellDataGetter}
         dataKey='sell'
@@ -51,7 +52,8 @@ function cellDataGetter ({ dataKey, rowData }) {
 }
 
 TownTable.propTypes = {
-  rowGetter: Props.func
+  rowGetter: Props.func,
+  width: Props.number
 };
 
 export default TownTable;

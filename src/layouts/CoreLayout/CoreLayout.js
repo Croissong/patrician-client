@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './CoreLayout.scss';
 import StatusBar from '../../containers/StatusBarContainer.js';
-import { Menu, MainButton, ChildButton } from 'react-mfb';
+import { Menu, MainButton, ChildButton } from 'constants/../../modules/react-mfb';
 import '../../styles/core.scss';
 
 export const CoreLayout = ({ children }, {router}) => {

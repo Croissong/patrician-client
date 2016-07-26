@@ -1,0 +1,33 @@
+$tableWidth: 300;
+$compareWidth: 100;
+
+:export { tableWidth: $tableWidth;
+          compareWidth: $compareWidth;}
+
+.header {
+    composes: header from '../PatricianView/PatricianView.scss';
+}
+
+.table {
+    width: $tableWidth + unquote("px");
+}
+
+.innerTable {
+    composes: table from '../PatricianView/PatricianView.scss'; 
+}
+
+.compare {
+    width: $compareWidth + unquote("px");
+}
+
+.left {
+    width: calc(#{$tableWidth} + #{$compareWidth}) + unquote("px");
+}
+
+.right {
+    widht: $tableWidth + unquote("px");
+}
+
+.townContent {
+    lost-center: 100%;
+}
